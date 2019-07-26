@@ -1,1 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Train Scheduler</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="assets/css/reset.css" type="text/css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Ultra&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="assets/css/style.css" type="text/css" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/train.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="jumbotron">
+                <h1 class="display-4">Train Scheduler</h1>
+                <p class="lead">All Aboard!!</p>
+            </div>
 
+            <div class="card mb-4">
+                <div class="card-header text-light p-2">Current Train Schedule</div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Train Name</th>
+                            <th scope="col">Destination</th>
+                            <th scope="col">Frequency (min)</th>
+                            <th scope="col">Next Arrival</th>
+                            <th scope="col">Minutes Away</th>
+                        </tr>
+                    </thead>
+                    <tbody id="add-train-info">
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-header text-light p-2">Add train</div>
+                <form action="" class="p-2">
+                    <div class="form-group p-2">
+                        <label for="formGroupExampleInput">Train Name</label>
+                        <input type="text" class="form-control" id="train-name-input">
+                    </div>
+                    <div class="form-group p-2">
+                        <label for="formGroupExampleInput2">Destination</label>
+                        <input type="text" class="form-control" id="destination-input">
+                    </div>
+                    <div class="form-group p-2">
+                        <label for="formGroupExampleInput2">First Train Time (HH:mm - military time)</label>
+                        <input type="text" class="form-control" id="train-time-input">
+                    </div>
+                    <div class="form-group p-2">
+                        <label for="formGroupExampleInput2">Frequency (min)</label>
+                        <input type="text" class="form-control" id="frequency-input">
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="submit-button">Submit</button>
+                </form>
+            </div>
+        </div>
+
+        <section class="stage">
+                <div class="train">
+                    <div class="wagon"></div>
+                    <div class="wagon"></div>
+                    <div class="wagon"></div>
+                    <div class="locomotive">
+                        <div class="cabin"></div>
+                        <div class="motor"></div>
+                        <div class="chimney">
+                            <div class="smoke"></div>
+                        </div>
+                        <div class="light"></div>
+                    </div>
+                </div>
+            </section>
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        <script src="assets/javascript/train.js"></script>
+    </body>
+</html>

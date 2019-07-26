@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+}
+
+/* ===== JUMBOTRON ===== */
+.jumbotron {
+    margin-top: 20px;
+    text-align: center;
+    font-family: 'Ultra', serif;
+    color: #fff;
+    background: #002855;
+    position: relative;
+}
+
+.display-4 {
+    text-shadow:
+		-1px -1px 0 #00843D,
+		1px -1px 0 #00843D,
+		-1px 1px 0 #00843D,
+		1px 1px 0 #00843D;
+}
+
+.lead {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* ===== CARDS ===== */
+.card {
+    border: 1px solid #00843D;
+}
+.card-header {
+    font-size: 16px;
+    background-color: #00843D;
+}
+
+th,
+.form-group label {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#submit-button {
+    background-color: #00843D;
+    border: none;
+    outline: none;
+}
