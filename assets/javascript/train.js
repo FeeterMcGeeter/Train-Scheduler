@@ -30,6 +30,12 @@ $("#submit-button").on("click", function() {
     firstTrainTime = $("#train-time-input").val().trim();
     frequency = $("#frequency-input").val().trim();
 
+    // ===== Console logging the user's inputs ===== 
+    console.log(name);
+    console.log(destination);
+    console.log(firstTrainTime);
+    console.log(frequency);
+
     // ===== Pushing the data to the database =====
     database.ref().push( {
         name: name,
@@ -43,16 +49,16 @@ $("#submit-button").on("click", function() {
 database.ref().on("child_added", function(snapshot) {
 
     // ===== Changing the first train time to reflect before current time =====
-    var firstTrainNew = moment(snapshot.val().firstTrainTime, "HH:mm").subtract(1, "days");
+    var trainTime = moment(snapshot.val().firstTrainTime, "HH:mm").subtract(1, "days");
     // ===== Difference between current time and firstTrainTime =====
-    var difference = moment().diff(moment(firstTrainNew), "minutes");
+    var difference = moment().diff(moment(trainTime), "minutes");
     var remainder = difference % snapshot.val().frequency;
     // ===== Minutes until the next train =====
     var minutesAway = snapshot.val().frequency - remainder;
     // ===== Next train arrival =====
     var nextTrain = moment().add(minutesAway, "minutes");
     // ===== Formatting the time =====
-    nextTrain = moment(nextTrain).format("HH:mm");
+    nextTrain = moment(nextTrain).format("h:mm A");
 
     // ===== APPENDING THE DATA TO THE TABLE =====
     $("#add-train-info").append("<tr><td>" + snapshot.val().name +
