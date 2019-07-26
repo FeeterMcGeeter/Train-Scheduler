@@ -13,3 +13,5 @@ The next train arrival and minutes left until arrival will also be displayed bas
 - Moment.js
 - Firebase
 
+###### Link to assignment provided below
+https://feetermcgeeter.github.io/Train-Scheduler/.
