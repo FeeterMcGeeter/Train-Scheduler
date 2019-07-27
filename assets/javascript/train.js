@@ -61,11 +61,11 @@ database.ref().on("child_added", function(snapshot) {
     nextTrain = moment(nextTrain).format("h:mm A");
 
     // ===== APPENDING THE DATA TO THE TABLE =====
-    $("#add-train-info").append("<tr><td>" + snapshot.val().name +
-        "</td><td>" + snapshot.val().destination +
-        "</td><td>" + snapshot.val().frequency +
-        "</td><td>" + nextTrain +
-        "</td><td>" + minutesAway + "</td></tr>");
+    $("#add-train-info").append("<tr><td>" + snapshot.val().name +"</td>" + 
+        "<td>" + snapshot.val().destination + "</td>" + 
+        "<td>" + snapshot.val().frequency +"</td>" +
+        "<td>" + nextTrain + "</td>" + 
+        "<td>" + minutesAway + "</td></tr>");
 
 }, function(errorObject) {
     console.log("Errors handled: " + errorObject.code);
