@@ -25,7 +25,7 @@ body {
 
 .lead {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
+    /* font-size: 20px; */
     font-weight: bold;
 }
 
@@ -34,14 +34,14 @@ body {
     border: 1px solid #00843D;
 }
 .card-header {
-    font-size: 16px;
+    /* font-size: 16px; */
     background-color: #00843D;
 }
 
 th,
 .form-group label {
     font-weight: bold;
-    font-size: 14px;
+    /* font-size: 14px; */
 }
 
 #submit-button {
@@ -53,6 +53,6 @@ th,
 @media screen and (max-width: 640px) {
 
     .display-4 {
-        font-size: 2.5rem;
+        font-size: 40px;
     }
 }

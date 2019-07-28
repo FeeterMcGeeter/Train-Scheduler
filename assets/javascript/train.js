@@ -1,3 +1,8 @@
+// Add the Firebase Database to store the user's inputs
+// Create the click handler for the submit button
+// Add the algorithm for the train's "next arrival" and "minutes away"
+// Append the stored data and the "next arrival" and "minutes away" to the table body
+
 // ===== FIREBASE CONFIG =====
 var firebaseConfig = {
     apiKey: "AIzaSyAn4WC-A3VKbyjRMIIJZdMXditFPlXPqYI",
@@ -22,7 +27,7 @@ var frequency = 0;
 
 // ===== CLICK HANDLER FOR SUBMIT BUTTON =====
 $("#submit-button").on("click", function() {
-
+    
     event.preventDefault();
     // ===== Getting data from the user's input =====
     name = $("#train-name-input").val().trim();
@@ -61,11 +66,15 @@ database.ref().on("child_added", function(snapshot) {
     nextTrain = moment(nextTrain).format("h:mm A");
 
     // ===== APPENDING THE DATA TO THE TABLE =====
-    $("#add-train-info").append("<tr><td>" + snapshot.val().name +"</td>" + 
-        "<td>" + snapshot.val().destination + "</td>" + 
-        "<td>" + snapshot.val().frequency +"</td>" +
-        "<td>" + nextTrain + "</td>" + 
-        "<td>" + minutesAway + "</td></tr>");
+    var newRow = $("<tr>").append(
+        $("<td>").text(snapshot.val().name),
+        $("<td>").text(snapshot.val().destination),
+        $("<td>").text(snapshot.val().frequency),
+        $("<td>").text(nextTrain),
+        $("<td>").text(minutesAway),
+    )
+
+    $("#add-train-info").append(newRow);
 
 }, function(errorObject) {
     console.log("Errors handled: " + errorObject.code);
